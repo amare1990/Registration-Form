@@ -4,26 +4,27 @@ const container = document.querySelector(".container"),
       signUp = document.querySelector(".signup-link"),
       login = document.querySelector(".login-link");
 
-    //   js code to show/hide password and change icon
-    pwShowHide.forEach(eyeIcon =>{
-        eyeIcon.addEventListener("click", ()=>{
-            pwFields.forEach(pwField =>{
-                if(pwField.type ==="password"){
-                    pwField.type = "text";
+    //pwShowHide.forEach(eyeIcon =>{
+    for(let i = 0; i < pwShowHide.length; i++ ) {
+        pwShowHide[i].addEventListener("click", ()=>{
+            //pwFields.forEach(pwField =>{
+            for(let j = 0; j < pwFields.length; j++) {
+                if(pwFields[j].type ==="password"){
+                    pwFields[j].type = "text";
 
-                    pwShowHide.forEach(icon =>{
-                        icon.classList.replace("uil-eye-slash", "uil-eye");
-                    })
+                    //pwShowHide.forEach(icon =>{
+                        pwShowHide[i].classList.replace("uil-eye-slash", "uil-eye");
+                    //})
                 }else{
-                    pwField.type = "password";
+                    pwFields[j].type = "password";
 
-                    pwShowHide.forEach(icon =>{
-                        icon.classList.replace("uil-eye", "uil-eye-slash");
-                    })
+                    //pwShowHide.forEach(icon =>{
+                        pwShowHide[i].classList.replace("uil-eye", "uil-eye-slash");
+                    //})
                 }
-            })
+            }
         })
-    })
+    }
 
     // js code to appear signup and login form
     signUp.addEventListener("click", ( )=>{
